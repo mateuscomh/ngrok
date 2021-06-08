@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+#-----------HEAD-------------------------------------------------------------->
+# AUTOR             : Matheus Martins 3mhenrique@gmail.com
+# HOMEPAGE          : https://github.com/mateuscomh 
+# DATA CRIAÇÃO      : 08/06/2021
+# PROGRAMA          : Shell-Base
+# VERSÃO            : 1.0.0
+# LICENÇA           : GPL3
+# REQUISITOS        : Necessário serviço ngrok server instalado
+# PEQUENA-DESCRIÇÃO : Programa para interromper ngrok simulando serviço em 
+# segundo plano.
+#
+# CHANGELOG         : 08/06/2021 10:00 - Adequado de bobmarksie 
+#
+#-----------END-HEAD-----------------------------------------------------------<
+
+echo "Stopping background ngrok process"
+sleep 1
+kill -9 $(ps -ef | grep 'ngrok' | grep -v 'grep' | awk '{print $2}') && /
+echo "ngrok stopped" || echo "nothing to do"
