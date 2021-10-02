@@ -17,5 +17,6 @@
 
 echo "Stopping background ngrok process"
 sleep 1
-kill -9 $(ps -ef | grep 'ngrok' | grep -v 'grep' | awk '{print $2}') && /
+kill -9 "$(pgrep "ngrok")" && /
+#kill -9 "$(ps -ef | grep 'ngrok' | grep -v 'grep' | awk '{print $2}')" && /
 echo "ngrok stopped" || echo "nothing to do"
